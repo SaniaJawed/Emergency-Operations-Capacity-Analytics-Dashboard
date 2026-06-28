@@ -1,0 +1,468 @@
+{
+  "meta": {
+    "title": "Code Blue \u2014 Emergency Operations",
+    "hospitals": 11,
+    "totalVisits": 9994,
+    "dataMonths": 12
+  },
+  "kpis": {
+    "totalVisits": 9994,
+    "avgWaitMin": 61.4,
+    "avgBedOccupancy": 54,
+    "mortalityRate": 3.32,
+    "satisfaction": 62.5,
+    "readmissionRate": 17.0,
+    "icuRate": 16.2,
+    "avgLOS": 41.5,
+    "avgTreatmentDelay": 74.0,
+    "avgTriageWait": 25.7
+  },
+  "hospitals": [
+    {
+      "name": "Alder Hey Children's Hospital",
+      "visits": 607,
+      "avgWait": 62.4,
+      "avgLOS": 42.3,
+      "mortalityRate": 3.6,
+      "readmissionRate": 8.4,
+      "icuRate": 26.0,
+      "satisfaction": 79.0,
+      "efficiency": 0.82,
+      "isPrivate": false,
+      "staffingStress": "MODERATE",
+      "risk": "Stable",
+      "avgCost": 13001.0,
+      "avgRevenue": 6175.0,
+      "complaints": 16
+    },
+    {
+      "name": "Bristol Royal Infirmary",
+      "visits": 1424,
+      "avgWait": 60.5,
+      "avgLOS": 41.5,
+      "mortalityRate": 2.9,
+      "readmissionRate": 17.6,
+      "icuRate": 15.8,
+      "satisfaction": 54.5,
+      "efficiency": 0.72,
+      "isPrivate": false,
+      "staffingStress": "MODERATE",
+      "risk": "Stable",
+      "avgCost": 11216.0,
+      "avgRevenue": 5793.0,
+      "complaints": 107
+    },
+    {
+      "name": "Harrogate District Hospital",
+      "visits": 366,
+      "avgWait": 60.4,
+      "avgLOS": 40.0,
+      "mortalityRate": 2.7,
+      "readmissionRate": 21.9,
+      "icuRate": 13.4,
+      "satisfaction": 71.5,
+      "efficiency": 0.76,
+      "isPrivate": false,
+      "staffingStress": "MODERATE",
+      "risk": "Watchlist",
+      "avgCost": 11125.0,
+      "avgRevenue": 3470.0,
+      "complaints": 15
+    },
+    {
+      "name": "King's College Hospital NHS FT",
+      "visits": 1709,
+      "avgWait": 63.3,
+      "avgLOS": 40.9,
+      "mortalityRate": 3.4,
+      "readmissionRate": 17.9,
+      "icuRate": 13.6,
+      "satisfaction": 55.7,
+      "efficiency": 0.68,
+      "isPrivate": false,
+      "staffingStress": "MODERATE",
+      "risk": "Watchlist",
+      "avgCost": 11551.0,
+      "avgRevenue": 5911.0,
+      "complaints": 120
+    },
+    {
+      "name": "Leeds General Infirmary",
+      "visits": 1210,
+      "avgWait": 61.1,
+      "avgLOS": 42.2,
+      "mortalityRate": 3.1,
+      "readmissionRate": 15.1,
+      "icuRate": 15.8,
+      "satisfaction": 60.1,
+      "efficiency": 0.7,
+      "isPrivate": false,
+      "staffingStress": "MODERATE",
+      "risk": "Stable",
+      "avgCost": 11556.0,
+      "avgRevenue": 5083.0,
+      "complaints": 56
+    },
+    {
+      "name": "Norfolk & Norwich University Hospital",
+      "visits": 722,
+      "avgWait": 62.0,
+      "avgLOS": 41.8,
+      "mortalityRate": 4.0,
+      "readmissionRate": 31.4,
+      "icuRate": 16.1,
+      "satisfaction": 59.2,
+      "efficiency": 0.65,
+      "isPrivate": false,
+      "staffingStress": "HIGH",
+      "risk": "Critical",
+      "avgCost": 11457.0,
+      "avgRevenue": 4538.0,
+      "complaints": 33
+    },
+    {
+      "name": "Nuffield Health Woking Hospital",
+      "visits": 530,
+      "avgWait": 61.5,
+      "avgLOS": 40.9,
+      "mortalityRate": 1.1,
+      "readmissionRate": 6.0,
+      "icuRate": 16.0,
+      "satisfaction": 88.4,
+      "efficiency": 0.88,
+      "isPrivate": true,
+      "staffingStress": "LOW",
+      "risk": "Stable",
+      "avgCost": 11250.0,
+      "avgRevenue": 13681.0,
+      "complaints": 11
+    },
+    {
+      "name": "Royal Cornwall Hospital",
+      "visits": 318,
+      "avgWait": 58.1,
+      "avgLOS": 39.3,
+      "mortalityRate": 2.8,
+      "readmissionRate": 24.8,
+      "icuRate": 17.0,
+      "satisfaction": 64.2,
+      "efficiency": 0.72,
+      "isPrivate": false,
+      "staffingStress": "HIGH",
+      "risk": "Watchlist",
+      "avgCost": 11331.0,
+      "avgRevenue": 2983.0,
+      "complaints": 6
+    },
+    {
+      "name": "Sandwell General Hospital",
+      "visits": 1023,
+      "avgWait": 61.0,
+      "avgLOS": 43.1,
+      "mortalityRate": 6.1,
+      "readmissionRate": 33.1,
+      "icuRate": 16.4,
+      "satisfaction": 28.9,
+      "efficiency": 0.55,
+      "isPrivate": false,
+      "staffingStress": "CRITICAL",
+      "risk": "Critical",
+      "avgCost": 11589.0,
+      "avgRevenue": 2630.0,
+      "complaints": 319
+    },
+    {
+      "name": "Spire Manchester Hospital",
+      "visits": 935,
+      "avgWait": 61.8,
+      "avgLOS": 42.2,
+      "mortalityRate": 2.2,
+      "readmissionRate": 3.4,
+      "icuRate": 16.7,
+      "satisfaction": 84.4,
+      "efficiency": 0.94,
+      "isPrivate": true,
+      "staffingStress": "LOW",
+      "risk": "Stable",
+      "avgCost": 11613.0,
+      "avgRevenue": 8414.0,
+      "complaints": 19
+    },
+    {
+      "name": "University College London Hospitals",
+      "visits": 1150,
+      "avgWait": 60.1,
+      "avgLOS": 40.2,
+      "mortalityRate": 3.2,
+      "readmissionRate": 10.8,
+      "icuRate": 16.1,
+      "satisfaction": 75.2,
+      "efficiency": 0.74,
+      "isPrivate": false,
+      "staffingStress": "MODERATE",
+      "risk": "Stable",
+      "avgCost": 12129.0,
+      "avgRevenue": 5300.0,
+      "complaints": 35
+    }
+  ],
+  "monthly": {
+    "labels": [
+      "Jan",
+      "Feb",
+      "Mar",
+      "Apr",
+      "May",
+      "Jun",
+      "Jul",
+      "Aug",
+      "Sep",
+      "Oct",
+      "Nov",
+      "Dec"
+    ],
+    "visits": [
+      1149,
+      1148,
+      1082,
+      659,
+      694,
+      682,
+      797,
+      754,
+      711,
+      722,
+      800,
+      796
+    ],
+    "avgWait": [
+      60.4,
+      61.2,
+      61.1,
+      60.8,
+      59.6,
+      61.7,
+      61.9,
+      61.9,
+      61.7,
+      61.5,
+      60.7,
+      64.3
+    ],
+    "avgLOS": [
+      42.0,
+      41.4,
+      41.5,
+      39.1,
+      41.7,
+      39.6,
+      42.2,
+      40.5,
+      40.4,
+      42.8,
+      42.4,
+      43.3
+    ]
+  },
+  "admissionTypes": {
+  "labels": [
+    "Emergency",
+    "Urgent",
+    "Elective",
+    "Transfer"
+  ],
+  "values": [
+    4411,
+    2761,
+    1847,
+    975
+  ]
+},
+
+"severityWait": {
+  "labels": [
+    "Level 1",
+    "Level 2",
+    "Level 3",
+    "Level 4",
+    "Level 5"
+  ],
+  "values": [
+    52,
+    55,
+    58,
+    62,
+    67
+  ]
+},
+
+  "outcomes": {
+    "labels": [
+      "Discharged",
+      "Admitted",
+      "Transferred",
+      "Deceased",
+      "AMA"
+    ],
+    "values": [
+      5694,
+      2755,
+      919,
+      332,
+      294
+    ]
+  },
+  "diagnosisReadmission": {
+    "labels": [
+      "Substance Abuse",
+      "Geriatric/Fall",
+      "Endocrine/Diabetes",
+      "Mental Health",
+      "Respiratory",
+      "Trauma/Injury",
+      "Infectious Disease",
+      "Neurological",
+      "Paediatric",
+      "Gastrointestinal",
+      "Cardiovascular",
+      "Orthopaedic",
+      "Oncology",
+      "Obstetric"
+    ],
+    "values": [
+      19.0,
+      18.8,
+      18.7,
+      18.4,
+      18.0,
+      17.2,
+      17.1,
+      16.8,
+      16.7,
+      16.5,
+      16.0,
+      15.7,
+      14.5,
+      12.4
+    ]
+  },
+  "insurance": {
+    "labels": [
+      "NHS Funded",
+      "Private Insurance",
+      "NHS Continuing Care",
+      "Self-Pay"
+    ],
+    "counts": [
+      4784,
+      2540,
+      1634,
+      1036
+    ],
+    "satisfaction": [
+      57.7,
+      75.8,
+      62.9,
+      51.4
+    ],
+    "wait": [
+      60.9,
+      61.5,
+      63.2,
+      60.3
+    ]
+  },
+  "heatmap": {
+    "days": [
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday",
+      "Sunday"
+    ],
+    "bands": [
+      "12AM\u20136AM",
+      "6AM\u201312PM",
+      "12PM\u20136PM",
+      "6PM\u201312AM"
+    ],
+    "values": [
+      [
+        56.1,
+        59.9,
+        61.7,
+        55.5,
+        66.7,
+        54.2,
+        60.8
+      ],
+      [
+        59.7,
+        59.7,
+        67.8,
+        64.2,
+        58.4,
+        64.3,
+        60.8
+      ],
+      [
+        60.6,
+        63.9,
+        65.3,
+        64.1,
+        61.8,
+        60.7,
+        62.3
+      ],
+      [
+        60.0,
+        59.7,
+        60.2,
+        63.0,
+        55.1,
+        59.9,
+        57.2
+      ]
+    ]
+  },
+  "careJourney": [
+    {
+      "stage": "Arrival",
+      "time": "0 min",
+      "status": "start",
+      "label": "Patient enters care pathway"
+    },
+    {
+      "stage": "Triage",
+      "time": "25.7 min",
+      "status": "warning",
+      "label": "Initial severity assessment"
+    },
+    {
+      "stage": "Treatment",
+      "time": "74.0 min",
+      "status": "critical",
+      "label": "Longest delay \u2014 bottleneck"
+    },
+    {
+      "stage": "Assessment",
+      "time": "2.3 hrs",
+      "status": "normal",
+      "label": "Clinical evaluation"
+    },
+    {
+      "stage": "Bed Assigned",
+      "time": "5.5 hrs",
+      "status": "warning",
+      "label": "Inpatient allocation delayed"
+    },
+    {
+      "stage": "Discharge",
+      "time": "1.7 days",
+      "status": "ok",
+      "label": "End of care episode"
+    }
+  ]
+}
