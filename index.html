@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Code Blue — Emergency Operations Analytics</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<!-- LOADER -->
+<div class="loader" id="loader">
+  <div class="loader-inner">
+    <div class="loader-cross" aria-hidden="true"><span></span><span></span></div>
+    <p class="loader-title">CODE BLUE</p>
+    <p class="loader-sub">Initialising Emergency Intelligence System</p>
+    <div class="loader-bar"><div class="loader-bar-fill" id="loaderBar"></div></div>
+  </div>
+</div>
+
+<!-- ANIMATED BACKGROUND -->
+<div class="bg-layer" aria-hidden="true">
+  <div class="bg-grid"></div>
+  <div class="bg-orb bg-orb-1"></div>
+  <div class="bg-orb bg-orb-2"></div>
+  <div class="bg-orb bg-orb-3"></div>
+  <div class="particles" id="particles"></div>
+</div>
+
+<!-- SIDEBAR -->
+<aside class="sidebar" aria-label="Dashboard navigation">
+  <div class="sidebar-brand">
+    <div class="brand-cross" aria-hidden="true"><span></span><span></span></div>
+    <div>
+      <p class="brand-title">CODE BLUE</p>
+      <p class="brand-sub">FP20 Challenge 38</p>
+    </div>
+  </div>
+  <nav class="sidebar-nav" aria-label="Sections">
+    <a class="nav-item active" data-section="overview" href="#overview"><span class="nav-dot"></span>Overview</a>
+    <a class="nav-item" data-section="hospitals" href="#hospitals"><span class="nav-dot"></span>Hospital Monitor</a>
+    <a class="nav-item" data-section="journey" href="#journey"><span class="nav-dot"></span>Patient Journey</a>
+    <a class="nav-item" data-section="outcomes" href="#outcomes"><span class="nav-dot"></span>Clinical Outcomes</a>
+    <a class="nav-item" data-section="pressure" href="#pressure"><span class="nav-dot"></span>Demand Pressure</a>
+  </nav>
+  <div class="sidebar-meta">
+    <p class="meta-line"><span class="meta-dot critical"></span>2 Critical hospitals</p>
+    <p class="meta-line"><span class="meta-dot watchlist"></span>3 Watchlist hospitals</p>
+    <p class="meta-line"><span class="meta-dot stable"></span>6 Stable hospitals</p>
+    <div class="meta-divider"></div>
+    <p class="meta-info">11 Hospitals · 9,994 Visits</p>
+    <p class="meta-info">12 Month Coverage · 2024</p>
+  </div>
+</aside>
+
+<main class="main">
+
+  <!-- HERO / OVERVIEW -->
+  <section class="section section-hero" id="overview" aria-label="System overview">
+
+    <div class="section-eyebrow">
+      <span class="eyebrow-tag critical-tag">⬤ LIVE SYSTEM</span>
+      <span class="eyebrow-text">Emergency Operations &amp; Capacity Overview</span>
+    </div>
+
+    <h1 class="hero-title">When minutes matter,<br><span class="hero-accent">every data point counts.</span></h1>
+    <p class="hero-sub">Real-time analytics across 11 NHS and private hospitals. Tracking 9,994 patient journeys, identifying bottlenecks, and surfacing the signals that save lives.</p>
+
+    <!-- ECG STRIP -->
+    <div class="ecg-strip" aria-hidden="true">
+      <svg viewBox="0 0 1200 70" preserveAspectRatio="none">
+        <defs>
+          <linearGradient id="ecgGrad" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0%"   stop-color="#27D7A1" stop-opacity="0"/>
+            <stop offset="30%"  stop-color="#27D7A1" stop-opacity="1"/>
+            <stop offset="100%" stop-color="#27D7A1" stop-opacity="1"/>
+          </linearGradient>
+        </defs>
+        <path class="ecg-line" stroke="url(#ecgGrad)"
+          d="M0,35 L60,35 L80,35 L90,10 L100,55 L110,5 L120,60 L130,35 L190,35
+             L250,35 L270,35 L280,10 L290,55 L300,5 L310,60 L320,35 L380,35
+             L440,35 L460,35 L470,10 L480,55 L490,5 L500,60 L510,35 L570,35
+             L630,35 L650,35 L660,10 L670,55 L680,5 L690,60 L700,35 L760,35
+             L820,35 L840,35 L850,10 L860,55 L870,5 L880,60 L890,35 L950,35
+             L1010,35 L1030,35 L1040,10 L1050,55 L1060,5 L1070,60 L1080,35 L1200,35"/>
+      </svg>
+      <div class="ecg-scan-line"></div>
+    </div>
+
+    <!-- STATS STRIP -->
+    <div class="hero-stats-strip">
+      <div class="stat-pill">
+        <span class="stat-pill-dot" style="background:var(--critical)"></span>
+        <span class="stat-pill-text">Mortality</span>
+        <span class="stat-pill-val" style="color:var(--critical)">3.32%</span>
+      </div>
+      <div class="stat-pill">
+        <span class="stat-pill-dot" style="background:var(--warning)"></span>
+        <span class="stat-pill-text">Avg wait</span>
+        <span class="stat-pill-val" style="color:var(--warning)">61.4 min</span>
+      </div>
+      <div class="stat-pill">
+        <span class="stat-pill-dot" style="background:var(--accent-blue)"></span>
+        <span class="stat-pill-text">Total visits</span>
+        <span class="stat-pill-val">9,994</span>
+      </div>
+      <div class="stat-pill">
+        <span class="stat-pill-dot" style="background:var(--accent-green)"></span>
+        <span class="stat-pill-text">Bed occupancy</span>
+        <span class="stat-pill-val" style="color:var(--accent-green)">54%</span>
+      </div>
+      <div class="stat-pill">
+        <span class="stat-pill-dot" style="background:var(--critical)"></span>
+        <span class="stat-pill-text">Readmission</span>
+        <span class="stat-pill-val" style="color:var(--critical)">17%</span>
+      </div>
+    </div>
+
+    <!-- ALERT -->
+    <div class="alert-banner" role="alert">
+      <span class="alert-icon" aria-hidden="true">⚠</span>
+      <div><strong>System Alert:</strong> Sandwell General and Norfolk &amp; Norwich reporting readmission rates 2× system average (33.1% and 31.4% vs 17% system avg). Immediate staffing review recommended.</div>
+    </div>
+
+    <!-- KPI GRID -->
+    <div class="kpi-grid" aria-label="Key performance indicators">
+      <div class="kpi-card">
+        <div class="kpi-label">Total visits</div>
+        <div class="kpi-value" id="kpi-visits">—</div>
+        <div class="kpi-delta neutral">12 months · 11 hospitals</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">Avg wait time</div>
+        <div class="kpi-value" id="kpi-wait">—</div>
+        <div class="kpi-delta neutral">System-wide average</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">Bed occupancy</div>
+        <div class="kpi-value" id="kpi-occ">—</div>
+        <div class="kpi-delta ok">↓ Within safe range</div>
+      </div>
+      <div class="kpi-card kpi-card--critical">
+        <div class="kpi-pulse" aria-hidden="true"></div>
+        <div class="kpi-label">Mortality rate</div>
+        <div class="kpi-value kpi-critical" id="kpi-mort">—</div>
+        <div class="kpi-delta critical-delta">332 deaths recorded</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">Patient satisfaction</div>
+        <div class="kpi-value" id="kpi-sat">—</div>
+        <div class="kpi-delta warning-delta">↓ Below 75% target</div>
+      </div>
+      <div class="kpi-card kpi-card--critical">
+        <div class="kpi-pulse" aria-hidden="true"></div>
+        <div class="kpi-label">30-day readmission</div>
+        <div class="kpi-value kpi-critical" id="kpi-readm">—</div>
+        <div class="kpi-delta critical-delta">1 in 6 patients return</div>
+      </div>
+    </div>
+
+    <div class="chart-row">
+      <div class="chart-card" style="grid-column:span 1">
+        <div class="chart-header">
+          <div><h3 class="chart-title">Monthly demand &amp; wait pressure</h3><p class="chart-sub">Patient volume and average wait times — 12 months</p></div>
+          <div class="insight-chip">Feb peak: 1,148 visits</div>
+        </div>
+        <div class="chart-wrap" style="height:220px"><canvas id="chartMonthly" height="220"></canvas></div>
+        <div class="chart-insight"><span class="insight-icon">↗</span>Q1 carries 33% of annual volume. Winter surge drives Feb peak — December records longest avg wait at 64.3 min.</div>
+      </div>
+      <div class="chart-card">
+        <div class="chart-header"><div><h3 class="chart-title">Admission pathways</h3><p class="chart-sub">How patients enter the system</p></div></div>
+        <div class="chart-wrap" style="height:200px"><canvas id="chartAdmission" height="200"></canvas></div>
+        <div class="chart-insight"><span class="insight-icon">↗</span>Emergency admissions (44%) exceed UK national benchmark of 38% — signalling unmet community care.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOSPITAL MONITOR -->
+  <section class="section" id="hospitals" aria-label="Hospital performance">
+    <div class="section-header">
+      <div class="section-eyebrow"><span class="eyebrow-tag">PERFORMANCE MONITOR</span></div>
+      <h2 class="section-title">Hospital pressure ranking</h2>
+      <p class="section-desc">Ranked by readmission risk. Hover rows for detail. Filter by status.</p>
+    </div>
+
+    <div class="filter-row" role="group" aria-label="Filter hospitals">
+      <button class="filter-btn active" data-filter="all">All (11)</button>
+      <button class="filter-btn" data-filter="Critical">⬤ Critical (2)</button>
+      <button class="filter-btn" data-filter="Watchlist">⬤ Watchlist (3)</button>
+      <button class="filter-btn" data-filter="Stable">⬤ Stable (6)</button>
+    </div>
+
+    <div class="hospital-table-wrap">
+      <table class="hospital-table" aria-label="Hospital performance data">
+        <thead>
+          <tr>
+            <th>Hospital</th><th>Visits</th><th>Avg wait</th><th>Readmission</th>
+            <th>Mortality</th><th>Satisfaction</th><th>Efficiency</th><th>Status</th>
+          </tr>
+        </thead>
+        <tbody id="hospitalTableBody"></tbody>
+      </table>
+    </div>
+
+    <div class="chart-row" style="margin-top:1.5rem">
+      <div class="chart-card">
+        <div class="chart-header"><div><h3 class="chart-title">Efficiency vs satisfaction</h3><p class="chart-sub">Each dot = one hospital · colour = risk</p></div></div>
+        <div class="chart-wrap" style="height:220px"><canvas id="chartScatter" height="220"></canvas></div>
+        <div class="chart-insight"><span class="insight-icon">↗</span>Private hospitals cluster top-right (high efficiency + satisfaction). Sandwell is the lone outlier: worst in both dimensions.</div>
+      </div>
+      <div class="chart-card">
+        <div class="chart-header"><div><h3 class="chart-title">30-day readmission by hospital</h3><p class="chart-sub">Ranked worst to best</p></div></div>
+        <div class="chart-wrap" style="height:220px"><canvas id="chartReadmission" height="220"></canvas></div>
+        <div class="chart-insight"><span class="insight-icon">↗</span>Sandwell 33.1% vs Spire Manchester 3% — an 11× gap. Best-in-class protocol is replicable.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PATIENT JOURNEY -->
+  <section class="section" id="journey" aria-label="Patient flow and journey">
+    <div class="section-header">
+      <div class="section-eyebrow"><span class="eyebrow-tag warning-tag">⚡ BOTTLENECK DETECTED</span></div>
+      <h2 class="section-title">The patient journey</h2>
+      <p class="section-desc">Average time at each care stage. The 74-minute treatment delay is the single biggest system bottleneck.</p>
+    </div>
+
+    <div class="journey-kpis">
+      <div class="journey-kpi"><span class="journey-kpi-val">25.7 min</span><span class="journey-kpi-lbl">Avg triage wait</span></div>
+      <div class="journey-kpi journey-kpi-critical">
+        <span class="journey-kpi-val" style="color:var(--critical)">74.0 min</span>
+        <span class="journey-kpi-lbl">Avg treatment delay</span>
+        <span class="journey-kpi-tag">Primary bottleneck</span>
+      </div>
+      <div class="journey-kpi"><span class="journey-kpi-val">41.5 hrs</span><span class="journey-kpi-lbl">Avg length of stay</span></div>
+      <div class="journey-kpi"><span class="journey-kpi-val">16.2%</span><span class="journey-kpi-lbl">ICU escalation rate</span></div>
+    </div>
+
+    <div class="care-journey" id="careJourney" aria-label="Patient care pathway"></div>
+
+    <div class="chart-row">
+      <div class="chart-card" style="grid-column:span 1">
+        <div class="chart-header"><div><h3 class="chart-title">ED pressure heatmap</h3><p class="chart-sub">Avg wait by day × hour — darker = higher pressure</p></div></div>
+        <div class="heatmap-wrap"><div id="heatmapGrid" aria-label="Pressure heatmap"></div></div>
+        <div class="chart-insight"><span class="insight-icon">↗</span>Wednesday 6AM–12PM peaks at 67.8 min. Friday overnight shows unexpected spike — likely a staffing gap to address.</div>
+      </div>
+      <div class="chart-card">
+        <div class="chart-header"><div><h3 class="chart-title">Wait time by severity</h3><p class="chart-sub">Should fall as severity rises — it doesn't</p></div></div>
+        <div class="chart-wrap" style="height:200px"><canvas id="chartSeverity" height="200"></canvas></div>
+        <div class="chart-insight"><span class="insight-icon">↗</span>Critical finding: Level 5 (most severe) waits <strong>62.4 min</strong> vs Level 1 at 56.7 min. Triage protocol is failing its primary purpose.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CLINICAL OUTCOMES -->
+  <section class="section" id="outcomes" aria-label="Clinical outcomes">
+    <div class="section-header">
+      <div class="section-eyebrow"><span class="eyebrow-tag">CLINICAL INTELLIGENCE</span></div>
+      <h2 class="section-title">Outcomes &amp; readmission risk</h2>
+      <p class="section-desc">Which conditions bring patients back? Where are we winning — and where are we failing?</p>
+    </div>
+
+    <div class="chart-row">
+      <div class="chart-card">
+        <div class="chart-header"><div><h3 class="chart-title">Patient outcome distribution</h3><p class="chart-sub">All 9,994 visits</p></div></div>
+        <div class="chart-wrap" style="height:200px"><canvas id="chartOutcomes" height="200"></canvas></div>
+        <div class="chart-insight"><span class="insight-icon">↗</span>57% successfully discharged. 294 AMA (against medical advice) departures are preventable — they correlate with long wait times.</div>
+      </div>
+      <div class="chart-card" style="grid-column:span 1">
+        <div class="chart-header"><div><h3 class="chart-title">30-day readmission by diagnosis</h3><p class="chart-sub">Which conditions drive return visits</p></div></div>
+        <div class="chart-wrap" style="height:220px"><canvas id="chartDiagReadm" height="220"></canvas></div>
+        <div class="chart-insight"><span class="insight-icon">↗</span>Substance Abuse (19%), Geriatric Falls (18.8%), Diabetes (18.7%) — all preventable with community-level interventions.</div>
+      </div>
+    </div>
+
+    <div class="chart-row">
+      <div class="chart-card" style="grid-column:span 1">
+        <div class="chart-header"><div><h3 class="chart-title">Insurance type — equity analysis</h3><p class="chart-sub">Wait times and satisfaction reveal a systemic gap</p></div></div>
+        <div class="chart-wrap" style="height:200px"><canvas id="chartInsurance" height="200"></canvas></div>
+        <div class="chart-insight"><span class="insight-icon">↗</span>Private Insurance: 75.8 satisfaction. Self-Pay: 51.4. A 24-point equity gap that demands systemic redress.</div>
+      </div>
+      <div class="chart-card">
+        <div class="chart-header"><div><h3 class="chart-title">Evidence-based actions</h3><p class="chart-sub">What the data recommends</p></div></div>
+        <div class="actions-list">
+          <div class="action-item critical-action">
+            <div class="action-icon-wrap">⚕</div>
+            <div><p class="action-title">Fix triage severity protocol</p><p class="action-desc">Level 5 patients waiting longer than Level 1. Review at all 11 hospitals immediately.</p></div>
+          </div>
+          <div class="action-item warning-action">
+            <div class="action-icon-wrap">↩</div>
+            <div><p class="action-title">Sandwell readmission programme</p><p class="action-desc">33.1% rate is 2× system average. Model post-discharge follow-up on Spire Manchester (3%).</p></div>
+          </div>
+          <div class="action-item warning-action">
+            <div class="action-icon-wrap">🤝</div>
+            <div><p class="action-title">Substance abuse pathway</p><p class="action-desc">19% readmission — highest of all diagnoses. Hospital-to-community handoff is failing.</p></div>
+          </div>
+          <div class="action-item ok-action">
+            <div class="action-icon-wrap">📈</div>
+            <div><p class="action-title">Replicate private sector efficiency</p><p class="action-desc">Spire &amp; Nuffield achieve 0.88–0.94 efficiency. Staffing ratios are transferable to NHS.</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DEMAND PRESSURE -->
+  <section class="section" id="pressure" aria-label="Demand and seasonal pressure">
+    <div class="section-header">
+      <div class="section-eyebrow"><span class="eyebrow-tag">SEASONAL INTELLIGENCE</span></div>
+      <h2 class="section-title">Demand pressure &amp; length of stay</h2>
+      <p class="section-desc">When the system is under greatest stress — and how to prepare for it.</p>
+    </div>
+
+    <div class="chart-row">
+      <div class="chart-card" style="grid-column:span 1">
+        <div class="chart-header"><div><h3 class="chart-title">Monthly length of stay trend</h3><p class="chart-sub">Average hours per patient episode across 2024</p></div></div>
+        <div class="chart-wrap" style="height:220px"><canvas id="chartLOS" height="220"></canvas></div>
+        <div class="chart-insight"><span class="insight-icon">↗</span>December peaks at 43.3 hrs — 10% above April low. Winter volumes + longer stays = capacity crisis without proactive planning.</div>
+      </div>
+      <div class="chart-card">
+        <div class="chart-header"><div><h3 class="chart-title">System performance vs NHS benchmarks</h3><p class="chart-sub">6 key metrics</p></div></div>
+        <div class="benchmark-list" aria-label="NHS performance benchmarks">
+          <div class="benchmark-item">
+            <div class="benchmark-label">4-hour wait target</div>
+            <div class="benchmark-bar-wrap"><div class="benchmark-bar" data-target="61.4" data-max="240" data-color="var(--accent-blue)"></div></div>
+            <div class="benchmark-val">61.4 min</div>
+          </div>
+          <div class="benchmark-item">
+            <div class="benchmark-label">Readmission (target &lt;10%)</div>
+            <div class="benchmark-bar-wrap"><div class="benchmark-bar" data-target="17" data-max="40" data-color="var(--critical)"></div></div>
+            <div class="benchmark-val critical-text">17.0%</div>
+          </div>
+          <div class="benchmark-item">
+            <div class="benchmark-label">Satisfaction (target &gt;75%)</div>
+            <div class="benchmark-bar-wrap"><div class="benchmark-bar" data-target="62.5" data-max="100" data-color="var(--warning)"></div></div>
+            <div class="benchmark-val warning-text">62.5%</div>
+          </div>
+          <div class="benchmark-item">
+            <div class="benchmark-label">ICU escalation rate</div>
+            <div class="benchmark-bar-wrap"><div class="benchmark-bar" data-target="16.2" data-max="40" data-color="var(--warning)"></div></div>
+            <div class="benchmark-val warning-text">16.2%</div>
+          </div>
+          <div class="benchmark-item">
+            <div class="benchmark-label">Bed occupancy (target &lt;85%)</div>
+            <div class="benchmark-bar-wrap"><div class="benchmark-bar" data-target="54" data-max="100" data-color="var(--accent-green)"></div></div>
+            <div class="benchmark-val ok-text">54%</div>
+          </div>
+          <div class="benchmark-item">
+            <div class="benchmark-label">Mortality rate</div>
+            <div class="benchmark-bar-wrap"><div class="benchmark-bar" data-target="3.32" data-max="10" data-color="var(--critical)"></div></div>
+            <div class="benchmark-val critical-text">3.32%</div>
+          </div>
+        </div>
+        <div class="chart-insight" style="margin-top:1rem"><span class="insight-icon">↗</span>2 of 6 metrics within target. Readmission and satisfaction are the primary systemic failures.</div>
+      </div>
+    </div>
+
+    <footer class="dashboard-footer">
+      <div class="footer-brand">
+        <div class="footer-cross" aria-hidden="true"><span></span><span></span></div>
+        CODE BLUE
+      </div>
+      <p>FP20 Analytics Challenge 38 · Built by SJ — Power BI + HTML/CSS/JS · <a href="https://github.com/saniajawed" style="color:var(--accent-blue);text-decoration:none">GitHub</a></p>
+      <p>Real data · 9,994 patient visits · 11 UK hospitals · 12 months · 2024</p>
+    </footer>
+  </section>
+
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
